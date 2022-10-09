@@ -1,0 +1,79 @@
+<SCRIPT Language='JavaScript'>
+
+    function inizia()
+    {
+                    
+                     r=10;
+                     c=10;
+                     var a = new Array();
+   
+                    for(i=0;i<r;i++)
+                    {
+                    a[i] = new Array(); 
+                    for(j=0;j<c;j++)
+                     {
+                     nuovo = document.createElement('div');
+                    nuovo.setAttribute('class', 'miediv');
+		            a[i][j]=nuovo;
+		            document.body.appendChild(a[i][j]);
+		 
+		            t=(i*55)+10;
+                     l=(j*55)+10;
+                     a[i][j].style.backgroundColor='yellow';
+                     a[i][j].style.top=t;
+                     a[i][j].style.left=l;
+                    }
+                    }
+      
+                    let arraydatiCasuali=[];
+                    let i;
+                
+                    let numerocasuale=-1;
+                    for(i=0;i<1000;i++)
+                    {
+                        numerocasuale=parseInt(Math.random()*1000);
+                        arraydatiCasuali.push(numerocasuale);
+                        document.getElementById("out").innerHTML+=arraydatiCasuali[i]+" ";
+                    }
+                
+                    let max=0;
+                    let posmax=0;
+                    for(i=0;i<1000;i++)
+                    {
+                        if(arraydatiCasuali[i]>max)
+                        {
+                            max=arraydatiCasuali[i];
+                            posmax=i;
+                            
+                        }
+                    }
+
+                    
+     
+    }
+    
+    </SCRIPT>
+    
+    
+    <HTML>
+       <HEAD>
+       <TITLE>test6</TITLE>
+       </HEAD>
+    
+       <style type="text/css">
+         
+          .miediv
+          {
+             position:absolute;
+             height:45px;
+             width:45px;
+             border-width:1px;
+             border:solid black;
+          }
+    
+       </style>
+    
+       <BODY onLoad="inizia()">
+       </BODY>
+    
+    </HTML>
